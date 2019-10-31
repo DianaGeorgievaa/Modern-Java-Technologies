@@ -16,21 +16,36 @@ public class FractionSimplifierTest {
 
 	@Test
 	public void testFraction_ProperFraction() {
-		assertEquals("2/3", fractionSimplifier.simplify("4/6"));
+		assertEquals(fractionSimplifier.simplify("4/6"), "2/3");
 	}
 
 	@Test
 	public void testFraction_ProperSimplifiedFraction() {
-		assertEquals("10/11", fractionSimplifier.simplify("10/11"));
+		assertEquals(fractionSimplifier.simplify("10/11"), "10/11");
 	}
 
 	@Test
 	public void testFraction_ProperFractionManyCommonDivisors() {
-		assertEquals("1/4", fractionSimplifier.simplify("100/400"));
+		assertEquals(fractionSimplifier.simplify("100/400"), "1/4");
 	}
 
 	@Test
 	public void testFraction_ImproperFractionToInteger() {
-		assertEquals("2", fractionSimplifier.simplify("8/4"));
+		assertEquals(fractionSimplifier.simplify("8/4"), "2");
+	}
+
+	@Test
+	public void testFraction_ImproperFractionOne() {
+		assertEquals(fractionSimplifier.simplify("161/1"), "161");
+	}
+
+	@Test
+	public void testFraction_ProperFractionZero() {
+		assertEquals(fractionSimplifier.simplify("0/100"), "0");
+	}
+
+	@Test
+	public void testFraction_ProperFractionOneOneInteger() {
+		assertEquals(fractionSimplifier.simplify("1/1"), "1");
 	}
 }
