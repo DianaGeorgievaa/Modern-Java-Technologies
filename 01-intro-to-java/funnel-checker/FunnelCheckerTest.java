@@ -7,7 +7,6 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 public class FunnelCheckerTest {
-
 	private static FunnelChecker funnelChecker;
 
 	@BeforeClass
@@ -44,5 +43,4 @@ public class FunnelCheckerTest {
 	public void testFunnelChecker_NoFunnelTwoMissing() {
 		assertFalse(funnelChecker.isFunnel("skiff", "ski"));
 	}
-
 }
