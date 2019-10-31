@@ -16,16 +16,32 @@ public class WordAnalyzerTest {
 
 	@Test
 	public void testWordAnalyzer_ThreeCommon() {
-		assertEquals("eho", wordAnalyzer.getSharedLetters("house", "home"));
+		assertEquals(wordAnalyzer.getSharedLetters("house", "home"), "eho");
 	}
 
 	@Test
 	public void testWordAnalyzer_OneCommon() {
-		assertEquals("m", wordAnalyzer.getSharedLetters("Micky", "mouse"));
+		assertEquals(wordAnalyzer.getSharedLetters("Micky", "mouse"), "m");
 	}
 
 	@Test
 	public void testWordAnalyzer_NoCommon() {
-		assertEquals("", wordAnalyzer.getSharedLetters("house", "villa"));
+		assertEquals(wordAnalyzer.getSharedLetters("house", "villa"), "");
 	}
+
+	@Test
+	public void testWordAnalyzer_AllCommon() {
+		assertEquals(wordAnalyzer.getSharedLetters("TuB", "BuT"), "btu");
+	}
+
+	@Test
+	public void testWordAnalyzer_Same() {
+		assertEquals(wordAnalyzer.getSharedLetters("run", "run"), "nru");
+	}
+
+	@Test
+	public void testWordAnalyzer_SameDiffCap() {
+		assertEquals(wordAnalyzer.getSharedLetters("run", "RUN"), "nru");
+	}
+
 }
